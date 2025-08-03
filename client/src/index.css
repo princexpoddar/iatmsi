@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* Global white background for all pages */
+body {
+  background-color: white;
+}
+
+/* Reduced motion styles */
+@media (prefers-reduced-motion) {
+  nav * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
+
 @config {
   content: [
     "./index.html",
