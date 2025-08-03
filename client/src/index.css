@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@config {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '@media (prefers-reduced-motion)': {
+          'nav *': {
+            'transition-duration': '0s !important',
+            'animation-duration': '0s !important',
+          },
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
+}
