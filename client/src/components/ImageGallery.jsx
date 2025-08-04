@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import galleryData from '../data/image-gallery.json';
 
 function ImageGallery() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Sample images for the gallery (you can replace these with actual images)
-  const galleryImages = [
-    'https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop'
-  ];
+  // Get images from JSON file
+  const galleryImages = galleryData.galleryImages;
 
   // Auto-advance slider
   useEffect(() => {
@@ -41,7 +35,7 @@ function ImageGallery() {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -59,18 +53,23 @@ function ImageGallery() {
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
             {galleryImages.map((image, index) => (
               <div
-                key={index}
+                key={image.id}
                 className={`absolute inset-0 transition-opacity duration-1000 ${
                   index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
               >
                 <img
-                  src={image}
-                  alt={`Gallery image ${index + 1}`}
+                  src={image.url}
+                  alt={image.alt}
                   className="w-full h-full object-cover"
+                  onError={(e) => console.error('Image failed to load:', image.url, e)}
+                  onLoad={() => console.log('Image loaded successfully:', image.url)}
                 />
-                {/* Image overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                {/* Image overlay with title and description */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">{image.title}</h3>
+                  <p className="text-sm opacity-90">{image.description}</p>
+                </div>
               </div>
             ))}
             
@@ -103,7 +102,7 @@ function ImageGallery() {
           <div className="flex justify-center mt-6 space-x-2">
             {galleryImages.map((image, index) => (
               <button
-                key={index}
+                key={image.id}
                 onClick={() => goToImage(index)}
                 className={`w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
                   index === currentImageIndex 
@@ -112,8 +111,8 @@ function ImageGallery() {
                 }`}
               >
                 <img
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
+                  src={image.url}
+                  alt={image.alt}
                   className="w-full h-full object-cover"
                 />
               </button>
@@ -121,16 +120,7 @@ function ImageGallery() {
           </div>
         </div>
 
-        {/* Gallery Description */}
-        <div className="mt-12 text-center">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Previous Conference Highlights
-          </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our conferences bring together researchers, industry professionals, and students 
-            from around the world to share knowledge and foster innovation in technology and management.
-          </p>
-        </div>
+
       </div>
     </section>
   );

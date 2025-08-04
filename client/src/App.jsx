@@ -5,7 +5,7 @@ import Homepage from './pages/Homepage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <SubNavbar />
       <Homepage />

@@ -1,0 +1,60 @@
+{
+  "galleryImages": [
+    {
+      "id": 1,
+      "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+      "alt": "Conference attendees networking",
+      "title": "Networking Session",
+      "description": "Professionals connecting at our conference"
+    },
+    {
+      "id": 2,
+      "url": "https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=600&fit=crop",
+      "alt": "Speaker presenting on stage",
+      "title": "Keynote Presentation",
+      "description": "Expert speaker delivering insights"
+    },
+    {
+      "id": 3,
+      "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+      "alt": "Panel discussion with experts",
+      "title": "Panel Discussion",
+      "description": "Industry experts sharing knowledge"
+    },
+    {
+      "id": 4,
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+      "alt": "Workshop participants collaborating",
+      "title": "Interactive Workshop",
+      "description": "Hands-on learning experience"
+    },
+    {
+      "id": 5,
+      "url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      "alt": "Team working on project",
+      "title": "Collaborative Session",
+      "description": "Teams working together on innovative projects"
+    },
+    {
+      "id": 6,
+      "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+      "alt": "Award ceremony celebration",
+      "title": "Award Ceremony",
+      "description": "Celebrating achievements and innovations"
+    },
+    {
+      "id": 7,
+      "url": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
+      "alt": "Technology showcase",
+      "title": "Tech Showcase",
+      "description": "Latest technology demonstrations"
+    },
+    {
+      "id": 8,
+      "url": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
+      "alt": "Research poster presentation",
+      "title": "Research Exhibition",
+      "description": "Academic research presentations"
+    }
+  ]
+} 
