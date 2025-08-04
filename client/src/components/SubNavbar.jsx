@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SubNavbar() {
+function SubNavbar({ onPageChange }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const dropdownData = {
@@ -123,6 +123,12 @@ function SubNavbar() {
         <a 
           key={link.id}
           href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            if (link.id === 'awards') {
+              onPageChange('awards-grants');
+            }
+          }}
           className="text-white hover:text-gray-200 px-2 py-2 relative transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-700 rounded-md"
         >
           {link.text}
