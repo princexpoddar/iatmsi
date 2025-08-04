@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar';
 import SubNavbar from './components/SubNavbar';
-import Homepage from './pages/Homepage';
+import PaperSubmission from './pages/PaperSubmission';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <SubNavbar />
       <Homepage />
+      {/* Other components can be added here */}
     </div>
   );
 }

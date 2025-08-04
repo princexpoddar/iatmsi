@@ -1,0 +1,102 @@
+.submission-container {
+  background: linear-gradient(135deg, #dc143c, #8db600);
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid #dc143c;
+  padding-bottom: 0.5rem;
+}
+
+.content-text {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.highlight-text {
+  color: #dc143c;
+  font-weight: 600;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #dc143c, #8db600);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.link-group {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.link-group a {
+  color: #dc143c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-group a:hover {
+  text-decoration: underline;
+}
+
+.deadline-text {
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fff8e1;
+  border-left: 4px solid #ffc107;
+}
+
+.contact-text {
+  margin-top: 2rem;
+  font-style: italic;
+}
