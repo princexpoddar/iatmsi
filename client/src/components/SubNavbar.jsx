@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 function SubNavbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const dropdownData = {
     about: [
-      "About IATMSI-2026",
-      "IATMSI History", 
-      "IATMSI Committees",
-      "Track Chairs"
+      { text: "About IATMSI-2026", path: "/about" },
+      { text: "IATMSI History", path: "/iatmsi-history" }, 
+      { text: "IATMSI Committees", path: "/iatmsi-committees" },
+      { text: "Track Chairs", path: "/track-chairs" }
     ],
     forAuthors: [
-      "Instructions for Camera Ready",
-      "Paper Submission",
-      "Oral Presenter's Guidelines",
-      "Poster Presenter's Guidelines", 
-      "Conference Program",
-      "Venue/Travel",
-      "Gallery"
+      { text: "Instructions for Camera Ready", path: "/camera-ready-instructions" },
+      { text: "Paper Submission", path: "/paper-submission" },
+      { text: "Oral Presenter's Guidelines", path: "/oral-presenter-guidelines" },
+      { text: "Poster Presenter's Guidelines", path: "/poster-presenter-guidelines" }, 
+      { text: "Conference Program", path: "/conference-program" },
+      { text: "Venue/Travel", path: "/venue-travel" },
+      { text: "Gallery", path: "/gallery" }
     ],
     help: [
-      "FAQ",
-      "Contact Support", 
-      "User Guide"
+      { text: "FAQ", path: "/faq" },
+      { text: "Contact Support", path: "/contact-support" }, 
+      { text: "User Guide", path: "/user-guide" }
     ]
   };
 
@@ -31,7 +32,8 @@ function SubNavbar() {
       id: 'about',
       text: 'ABOUT',
       hasDropdown: true,
-      dropdownItems: dropdownData.about
+      dropdownItems: dropdownData.about,
+      path: '/about'
     },
     {
       id: 'forAuthors',
@@ -42,37 +44,44 @@ function SubNavbar() {
     {
       id: 'callForPapers',
       text: 'CALL FOR PAPERS',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/call-for-papers'
     },
     {
       id: 'paperSubmission',
       text: 'PAPER SUBMISSION',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/paper-submission'
     },
     {
       id: 'sponsorship',
       text: 'SPONSORSHIP/EXHIBITS',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/sponsorship'
     },
     {
       id: 'importantDates',
       text: 'IMPORTANT DATES',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/important-dates'
     },
     {
       id: 'callForReviewers',
       text: 'CALL FOR REVIEWERS',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/call-for-reviewers'
     },
     {
       id: 'keynoteTalks',
       text: 'KEYNOTE TALKS/TUTORIALS',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/keynote-talks'
     },
     {
       id: 'awards',
       text: 'AWARDS/GRANTS',
-      hasDropdown: false
+      hasDropdown: false,
+      path: '/awards'
     },
     {
       id: 'help',
@@ -105,13 +114,14 @@ function SubNavbar() {
             <div className="absolute top-full left-0 mt-1 w-48 bg-gray-800 rounded-md shadow-lg z-50 border border-gray-600">
               <div className="py-1">
                 {link.dropdownItems.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href="#"
+                    to={item.path}
                     className="block px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors duration-200"
+                    onClick={() => setActiveDropdown(null)}
                   >
-                    {item}
-                  </a>
+                    {item.text}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -120,13 +130,13 @@ function SubNavbar() {
       );
     } else {
       return (
-        <a 
+        <Link 
           key={link.id}
-          href="#" 
+          to={link.path || "#"} 
           className="text-white hover:text-gray-200 px-2 py-2 relative transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-700 rounded-md"
         >
           {link.text}
-        </a>
+        </Link>
       );
     }
   };
