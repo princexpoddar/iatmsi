@@ -33,7 +33,6 @@ function App() {
       <div className="min-h-screen bg-white">
         <Navbar />
         <SubNavbar />
-        <Footer />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutIATMSI />} />
@@ -59,6 +58,7 @@ function App() {
           <Route path="/keynote-talks" element={<KeynoteTalks />} />
           <Route path="/awards" element={<Awards />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
