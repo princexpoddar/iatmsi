@@ -25,6 +25,7 @@ import ContactUs from './pages/ContactUs';
 import CallForReviewers from './pages/CallForReviewers';
 import KeynoteTalks from './pages/KeynoteTalks';
 import Awards from './pages/Awards';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <div className="min-h-screen bg-white">
         <Navbar />
         <SubNavbar />
+        <Footer />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutIATMSI />} />
