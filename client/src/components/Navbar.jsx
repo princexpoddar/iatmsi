@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -16,22 +17,22 @@ function Navbar() {
           
           {/* Center - IATMSI-2026 */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-3xl font-bold text-gray-800">
+            <Link to="/" className="text-3xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
               IATMSI-2026
-            </h1>
+            </Link>
           </div>
           
           {/* Right side - Navigation */}
           <nav className="hidden md:flex space-x-4">
-            <a href="#" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
+            <Link to="/" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
               Home
-            </a>
-            <a href="#" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
+            </Link>
+            <Link to="/register" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
               Register
-            </a>
-            <a href="#" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
+            </Link>
+            <Link to="/contact-us" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
               Contact Us
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
