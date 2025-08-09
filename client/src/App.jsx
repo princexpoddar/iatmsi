@@ -26,6 +26,8 @@ import CallForReviewers from './pages/CallForReviewers';
 import KeynoteTalks from './pages/KeynoteTalks';
 import Awards from './pages/Awards';
 import Footer from './components/Footer';
+import ApplyReviewer from './pages/ApplyReviewer.jsx';
+
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
         <Navbar />
         <SubNavbar />
         <Routes>
+          <Route path="/apply-reviewer" element={<ApplyReviewer />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutIATMSI />} />
           <Route path="/call-for-papers" element={<CallForPapers />} />
