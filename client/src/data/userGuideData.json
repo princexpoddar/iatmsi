@@ -1,0 +1,256 @@
+{
+  "guideData": {
+    "gettingStarted": {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "icon": "play",
+      "content": [
+        {
+          "title": "Welcome to IATMSI-2026",
+          "description": "The 4th IEEE International Conference on Interdisciplinary Approaches in Technology and Management for Social Innovation",
+          "items": [
+            "Conference Dates: March 6-8, 2026",
+            "Venue: ABV-IIITM Gwalior, Madhya Pradesh, India",
+            "Theme: \"Enabling the Change! Social Innovation for Sustainable Societies\"",
+            "Format: Hybrid (Physical and Virtual participation available)"
+          ]
+        },
+        {
+          "title": "Quick Navigation",
+          "description": "Essential pages to help you get started",
+          "items": [
+            "Homepage: Overview and latest updates",
+            "Call for Papers: Submission guidelines and important dates",
+            "Registration: Conference registration and payment",
+            "Important Dates: Key deadlines and milestones",
+            "FAQ: Frequently asked questions and answers"
+          ]
+        }
+      ]
+    },
+    "paperSubmission": {
+      "id": "paper-submission",
+      "title": "Paper Submission",
+      "icon": "document",
+      "content": [
+        {
+          "title": "Submission Guidelines",
+          "description": "Follow these guidelines for successful paper submission",
+          "items": [
+            "Use IEEE template format (available on IEEE website)",
+            "Maximum 6 pages (can extend to 8 pages with additional fee)",
+            "Submit in PDF format only",
+            "File size should not exceed 10 MB",
+            "Use Microsoft CMT paper submission portal",
+            "Ensure all authors are properly listed"
+          ]
+        },
+        {
+          "title": "Track Categories",
+          "description": "Choose the most appropriate track for your research",
+          "items": [
+            "Innovative Solutions for Healthcare",
+            "Power, Control, Energy, and Intelligent Transportation Technologies",
+            "AI, IoT, and Computer Vision Enabled Technologies",
+            "Green Electronics, VLSI, Communication, and Sensor-Based Technologies",
+            "IT-enabled Management for Social Change"
+          ]
+        },
+        {
+          "title": "Review Process",
+          "description": "Understanding the peer review process",
+          "items": [
+            "Double-blind peer review process",
+            "Reviewers evaluate novelty, technical contribution, and presentation",
+            "Acceptance rate typically <20%",
+            "Authors receive detailed feedback for improvements",
+            "Camera-ready submission after acceptance"
+          ]
+        }
+      ]
+    },
+    "registration": {
+      "id": "registration",
+      "title": "Registration & Payment",
+      "icon": "credit-card",
+      "content": [
+        {
+          "title": "Registration Categories",
+          "description": "Choose the appropriate registration category",
+          "items": [
+            "Student: For full-time students with valid ID",
+            "Professional: For faculty, researchers, and industry professionals",
+            "Student Attendee: For non-author students who want to attend",
+            "Professional Attendee: For non-author professionals who want to attend"
+          ]
+        },
+        {
+          "title": "Payment Methods",
+          "description": "Available payment options",
+          "items": [
+            "Online payment through secure portal",
+            "Bank transfer (details available on registration page)",
+            "Payment confirmation required for paper publication",
+            "Early bird discounts available (check important dates)",
+            "Registration grants available for high-quality papers"
+          ]
+        },
+        {
+          "title": "What's Included",
+          "description": "Registration benefits and inclusions",
+          "items": [
+            "Conference proceedings (Scopus indexed)",
+            "Lunch coupons for all three days",
+            "High tea and refreshments",
+            "Cultural event and gala dinner",
+            "Conference kit and certificate",
+            "Access to all technical sessions"
+          ]
+        }
+      ]
+    },
+    "conferenceParticipation": {
+      "id": "conference-participation",
+      "title": "Conference Participation",
+      "icon": "users",
+      "content": [
+        {
+          "title": "Presentation Guidelines",
+          "description": "How to prepare and deliver your presentation",
+          "items": [
+            "Oral presentations: 15 minutes + 5 minutes Q&A",
+            "Poster presentations: 3-minute pitch + poster display",
+            "Upload presentation slides 24 hours before session",
+            "Bring backup copy on USB drive",
+            "Practice your presentation timing",
+            "Prepare for questions from audience"
+          ]
+        },
+        {
+          "title": "Virtual Participation",
+          "description": "Guidelines for online participants",
+          "items": [
+            "Test your internet connection and equipment",
+            "Join virtual sessions 10 minutes early",
+            "Use professional background and lighting",
+            "Mute microphone when not speaking",
+            "Use chat for questions during presentations",
+            "Ensure stable internet connection throughout"
+          ]
+        },
+        {
+          "title": "Physical Participation",
+          "description": "Information for on-site attendees",
+          "items": [
+            "Accommodation available on campus (nominal charges)",
+            "Transportation from airport/railway station",
+            "Conference venue: ABV-IIITM Gwalior campus",
+            "Cultural programs and networking events",
+            "Campus tour and facilities access",
+            "Local attractions and sightseeing options"
+          ]
+        }
+      ]
+    },
+    "awardsOpportunities": {
+      "id": "awards-opportunities",
+      "title": "Awards & Opportunities",
+      "icon": "star",
+      "content": [
+        {
+          "title": "Best Paper Awards",
+          "description": "Recognition for outstanding research",
+          "items": [
+            "Best Paper Award for each track",
+            "Best Poster Award for poster presentations",
+            "Best PhD Thesis Award for doctoral students",
+            "Best Research Simulation Award (with ScholarsColab.com)",
+            "Awards announced on the last day",
+            "Registration grants for selected papers"
+          ]
+        },
+        {
+          "title": "Networking Opportunities",
+          "description": "Maximize your conference experience",
+          "items": [
+            "Meet leading researchers and industry experts",
+            "Participate in panel discussions and workshops",
+            "Join special interest groups and collaborations",
+            "Attend keynote talks by eminent speakers",
+            "Network during coffee breaks and social events",
+            "Explore potential research collaborations"
+          ]
+        }
+      ]
+    },
+    "technicalSupport": {
+      "id": "technical-support",
+      "title": "Technical Support",
+      "icon": "help-circle",
+      "content": [
+        {
+          "title": "Getting Help",
+          "description": "Where to find assistance when you need it",
+          "items": [
+            "Email: iatmsi@iiitm.ac.in for general queries",
+            "Phone: +91 8962280784, +91 9202731889",
+            "FAQ page for common questions",
+            "Contact Support page for technical issues",
+            "On-site help desk during conference",
+            "Virtual support for online participants"
+          ]
+        },
+        {
+          "title": "Common Issues & Solutions",
+          "description": "Quick fixes for common problems",
+          "items": [
+            "Submission portal issues: Clear browser cache and try again",
+            "Payment problems: Contact registration team immediately",
+            "Presentation upload issues: Use supported file formats",
+            "Virtual session problems: Check internet connection",
+            "Certificate queries: Contact after conference",
+            "Accommodation issues: Contact local organizing committee"
+          ]
+        }
+      ]
+    }
+  },
+  "quickLinks": [
+    {
+      "href": "/call-for-papers",
+      "title": "Call for Papers",
+      "description": "Submission guidelines and important dates",
+      "gradient": "from-purple-500 to-blue-500"
+    },
+    {
+      "href": "/important-dates",
+      "title": "Important Dates",
+      "description": "Key deadlines and milestones",
+      "gradient": "from-blue-500 to-purple-500"
+    },
+    {
+      "href": "/faq",
+      "title": "FAQ",
+      "description": "Frequently asked questions",
+      "gradient": "from-green-500 to-blue-500"
+    },
+    {
+      "href": "/contact-support",
+      "title": "Contact Support",
+      "description": "Get help when you need it",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "href": "/awards",
+      "title": "Awards",
+      "description": "Recognition opportunities",
+      "gradient": "from-pink-500 to-purple-500"
+    },
+    {
+      "href": "/venue-travel",
+      "title": "Venue & Travel",
+      "description": "Campus information and travel details",
+      "gradient": "from-teal-500 to-blue-500"
+    }
+  ]
+} 

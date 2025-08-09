@@ -1,0 +1,53 @@
+{
+  "awardCategories": [
+    {
+      "title": "Best Paper Awards",
+      "icon": "star",
+      "description": "IATMSI recognizes the excellence in research through prestigious awards from each Track on the last day of the conference.",
+      "items": [
+        "IATMSI-2026 Best Paper Awards: All accepted papers will be considered for this award. Awards will be announced on the last day of the conference.",
+        "IATMSI-2026 Best Poster Award: All accepted papers for poster presentation will be considered for this award."
+      ]
+    },
+    {
+      "title": "Best Research Simulation Award",
+      "icon": "cpu",
+      "description": "In collaboration with ScholarsColab.com, researchers can upload their work to the platform for enhanced collaboration opportunities.",
+      "items": [
+        "Upload research codes/simulations to ScholarsColab.com",
+        "Open collaboration opportunities for Scholars and Research Mentors",
+        "Repository of research codes and simulations"
+      ]
+    },
+    {
+      "title": "Best PhD Thesis Award",
+      "icon": "graduation-cap",
+      "description": "Exclusive platform for PhD students who have submitted their thesis within the past year or are nearing completion.",
+      "items": [
+        "Present cutting-edge research at the PhD Forum",
+        "Gain valuable feedback from leading researchers",
+        "Establish meaningful connections with industry professionals"
+      ]
+    },
+    {
+      "title": "Best Prototype Award",
+      "icon": "box",
+      "description": "Recognition for innovative prototypes and practical implementations that demonstrate real-world applications of research findings."
+    },
+    {
+      "title": "Fellowships",
+      "icon": "users",
+      "description": "Additional funding and support opportunities for outstanding researchers and students."
+    }
+  ],
+  "criteria": [
+    { "title": "Novelty", "description": "Originality and innovation in research approach" },
+    { "title": "Presentation Type", "description": "Extra credit for offline presentations" },
+    { "title": "Theory Advancement", "description": "Contribution to theoretical frameworks" },
+    { "title": "Result Quality", "description": "Robustness and significance of findings" },
+    { "title": "Manuscript Quality", "description": "Clarity and academic writing standards" },
+    { "title": "Industrial Relevance", "description": "Practical applications and real-world impact" },
+    { "title": "Presentation Quality", "description": "Effective oral/poster delivery" },
+    { "title": "Paper Formatting", "description": "Adherence to submission guidelines" }
+  ]
+} 

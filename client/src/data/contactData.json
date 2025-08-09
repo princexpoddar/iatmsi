@@ -1,0 +1,55 @@
+{
+  "contactMethods": [
+    {
+      "title": "Email Us",
+      "description": "Send us an email for any queries",
+      "icon": "mail",
+      "value": "iatmsi@iiitm.ac.in",
+      "link": "mailto:iatmsi@iiitm.ac.in"
+    },
+    {
+      "title": "Call Us",
+      "description": "Reach us directly on phone",
+      "icon": "phone",
+      "value": "+91 8962280784, +91 9202731889",
+      "link": "tel:+918962280784"
+    },
+    {
+      "title": "Visit Us",
+      "description": "Come visit our campus",
+      "icon": "map-pin",
+      "value": "ABV-IIITM Gwalior, Morena Rd, IIITM Campus, Gwalior, Madhya Pradesh, India- 474015",
+      "link": "https://maps.google.com/?q=ABV-IIITM+Gwalior"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "link": "#"
+    },
+    {
+      "name": "Twitter",
+      "icon": "twitter",
+      "link": "#"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "link": "#"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "link": "#"
+    }
+  ],
+  "campus": {
+    "name": "ABV-IIITM Gwalior",
+    "description": "Located in the heart of Madhya Pradesh, our campus provides state-of-the-art facilities for conferences and academic events.",
+    "address": "Morena Rd, IIITM Campus, Gwalior, Madhya Pradesh, India- 474015",
+    "phone": "+91 8962280784, +91 9202731889",
+    "email": "iatmsi@iiitm.ac.in",
+    "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.233227215726!2d78.17156387541677!3d26.2494520770488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c6e5d32a4d53%3A0xf834069adc0c9b89!2sAtal%20Bihari%20Vajpayee%20Indian%20Institute%20of%20Information%20Technology%20and%20Management%20Gwalior!5e1!3m2!1sen!2sin!4v1754576001277!5m2!1sen!2sin"
+  }
+} 

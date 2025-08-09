@@ -1,0 +1,138 @@
+{
+  "faqCategories": [
+    {
+      "title": "Registration & Payment",
+      "icon": "credit-card",
+      "items": [
+        {
+          "question": "The prices mentioned on the website for registration are they per author or per paper?",
+          "answer": "Per Presenter/Author up to 1 paper."
+        },
+        {
+          "question": "As students the three of us would like to attend the conference and present our paper. Would it be possible for all three of us to present our paper in parts?",
+          "answer": "Yes, provided all three have to register. One should be register as author and rest two person should be register as attendee."
+        },
+        {
+          "question": "We have 3 authors and would like present. Do all have to register as Authors?",
+          "answer": "No. Only 1 Author needs to register as Author and rest can be registered as Attendees."
+        },
+        {
+          "question": "Is it compulsory to make payment in order get paper published?",
+          "answer": "Yes."
+        },
+        {
+          "question": "If i make online payment, will that be sufficient for paper publication or i have to be physically present at venue?",
+          "answer": "Physical or virtual presence is required for publication."
+        },
+        {
+          "question": "If I want to present my paper and attend only the conference but not the tutorials, should I register myself as a Student/Professional or as a Student/Professional Attendee?",
+          "answer": "In that case, you have to register as Student/Professional category. Student/Professional Attendee means only those non-authors etc. who only want to attend the conference."
+        },
+        {
+          "question": "Registration Grant section states that \"a limited number of registration grants are available for high-quality research papers\". What does it mean?",
+          "answer": "It means on the last day of the conference, we will announce the winners of registration grants and will refund their registration money. The criteria for choosing the registration grant winners is the quality of their papers which will be judge by their track chairs/Co-Chairs during the presentation at the conference."
+        }
+      ]
+    },
+    {
+      "title": "Certificates & Attendance",
+      "icon": "award",
+      "items": [
+        {
+          "question": "Who gets the Presentation certificate?",
+          "answer": "The author who has registered and physically or virtually presented will get the Presentation Certificate."
+        },
+        {
+          "question": "Will all authors get the presentation Certificate?",
+          "answer": "No. Only Registered authors who physically or virtually present will get the certificates."
+        },
+        {
+          "question": "My Co-author is faculty and won't be able attend, whether they will get the certificate, if paid but not attended.",
+          "answer": "No. Only Registered and Physically or virtually present will get the certificate."
+        },
+        {
+          "question": "I have an early return train/flight, may I get the certificate early?",
+          "answer": "Certificates will be distributed at the End of Day on all the days. Early request for distribution will not be entertained but we can post or mail your certificate at your address."
+        },
+        {
+          "question": "I am not able to attend the conference; can I send someone else to collect my certificate?",
+          "answer": "No. Only physically present participant will receive the certificate."
+        },
+        {
+          "question": "If I attend the only Tutorials on the first day of the conference, then Shall I receive any certificate?",
+          "answer": "Yes, you will receive a certificate."
+        },
+        {
+          "question": "I need an invitation certificate for the visa. How I can get the certificate?",
+          "answer": "For, this please write a request mail to us."
+        }
+      ]
+    },
+    {
+      "title": "Paper Submission & Format",
+      "icon": "file-text",
+      "items": [
+        {
+          "question": "Reviews states Paper is not as per IEEE format. If I submit without correction will it get published?",
+          "answer": "No. Any rejection from IEEE side due to any reason will be authors responsibility."
+        },
+        {
+          "question": "Most of my review comments revolve around not following the IEEE template format. Which is the correct IEEE format?",
+          "answer": "IEEE template is available on https://www.ieee.org/conferences/publishing/templates"
+        },
+        {
+          "question": "One of the review comments states that one implementation detail is missing. However, adding that to my paper would violate the strict 6-pages size limit. What should I do in such cases? Will my paper be rejected for publication?",
+          "answer": "Maximum page limited is six. If your page count increases after incorporating the reviewer comments, then you have to remove some unwanted or common information available in the paper but in any case, the page count should not go beyond 6. However, authors can add up to 2 extra pages with the appropriate fee payment per page. The manuscript must be submitted in pdf format only, and the file size of your manuscript should not exceed 10 MB. This is the policy of IEEE. Authors must use the manuscript template as follows: Overleaf, LaTeX, or Word. The manuscript has to be uploaded online at the IATMSI-2025 using the Microsoft CMT paper submission portal."
+        },
+        {
+          "question": "After creating a camera-ready paper and passing all plagiarism checks, would my paper go through a final sanity check from IATMSI's side to make sure everything is as expected so that it surely gets published?",
+          "answer": "Yes."
+        },
+        {
+          "question": "I wrote the paper as a student in May 2024 as part of my final semester thesis. However, I am a working professional now. Does this make me eligible to register at the conference as a student or as a professional?",
+          "answer": "It depends on the affiliation mentioned in the paper. If you mentioned affiliation of your previous college or university, then it is treated as a student paper and you have to register as a student category. If you have mentioned your current affiliation i.e. industry, college etc. then you have register in the professional category."
+        }
+      ]
+    },
+    {
+      "title": "Conference Details & Presentation",
+      "icon": "calendar",
+      "items": [
+        {
+          "question": "What would be presentation Dates & when the schedule will be uploaded?",
+          "answer": "Presentation dates would be from 6th March to 8th March 2025. Schedule will be uploaded as per dates mentioned on the website."
+        },
+        {
+          "question": "Is it mandatory to attend Tutorials?",
+          "answer": "No."
+        },
+        {
+          "question": "Can I choose the date of presentation?",
+          "answer": "No. The presentation will be as per schedule only."
+        },
+        {
+          "question": "What does \"Hybrid\" mode mean? Am I allowed to present my paper virtually or do I have to be physically present in Gwalior?",
+          "answer": "You can attend the conference physically or virtually as per your convenience."
+        },
+        {
+          "question": "If I present my paper virtually: Will I receive a certificate? Will I be eligible to compete for the Best Paper Awards? Will my paper be published in IEEE Xplore?",
+          "answer": "Yes, you will receive the certificate of the presentation and also be eligible for the best paper award. Also, your paper will be published in IEEE Xplore."
+        },
+        {
+          "question": "If I present physically: Will I be provided with accommodation, food, and travel during the course of the conference? Any extra covid protocols I should follow?",
+          "answer": "We will provide the accommodation in the ABV-IIITM Gwalior on a nominal payment basis. Also, if you attend physically then you can enjoy the cultural programs, gala dinner, and other events during the conference. Registration fees include a registration kit, three days lunch coupons, high tea, cultural event coupons and one-day Gala dinner coupons."
+        }
+      ]
+    },
+    {
+      "title": "Student & Travel Grants",
+      "icon": "map-pin",
+      "items": [
+        {
+          "question": "Are there any travel grants for students?",
+          "answer": "Yes."
+        }
+      ]
+    }
+  ]
+} 
