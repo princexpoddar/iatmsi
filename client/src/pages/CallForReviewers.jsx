@@ -1,22 +1,29 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import SubNavbar from '../components/SubNavbar';
+import Footer from '../components/Footer';
 
 function CallForReviewers() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* hero sec */}
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Navbar />
+      <SubNavbar />
+
+      {/* keep in page cause the one in components is for homepage */}
       <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
         <div className="max-w-5xl mx-auto text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Call for Reviewers
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Join the Technical Program Committee and contribute to advancing high-quality research by reviewing submissions for IATMSI-2026.
+            Join the Technical Program Committee and contribute to advancing research for IATMSI'26.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* reasons*/}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
+        {/* why to join */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Become a Reviewer?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -42,13 +49,14 @@ function CallForReviewers() {
             </div>
           ))}
         </div>
+
         {/* instructions */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Reviewer Instructions</h2>
           <ul className="space-y-4 list-none">
             {[
               "PhD degree in relevant field or equivalent experience.",
-              "Published research papers in peer-reviewed journals.", 
+              "Published research papers in peer-reviewed journals.",
               "Expertise in one or more conference tracks.",
               "Commitment to timely and thorough reviews.",
               "Adherence to ethical review standards."
@@ -61,27 +69,23 @@ function CallForReviewers() {
           </ul>
         </div>
 
-
-
         <div className="text-center mb-16">
           <a
             href="/sample-guidelines.pdf"
             download
             className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 mr-4"
-            
           >
             Download Guidelines
           </a>
-          <a 
-            href="/apply-reviewer" 
+          <a
+            href="/apply-reviewer"
             className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 mr-4"
           >
             Apply as Reviewer
           </a>
-
         </div>
 
-        {/* contact*/}
+        {/* contact */}
         <div className="bg-white rounded-xl shadow-lg p-8 text-center">
           <div className="max-w-2xl mx-auto">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
@@ -103,6 +107,8 @@ function CallForReviewers() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
