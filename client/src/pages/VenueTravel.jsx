@@ -1,272 +1,205 @@
 import React from 'react';
 
 function VenueTravel() {
+  const venueHighlights = [
+    {
+      title: "Conference Venue",
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9l-6.91.74L12 16l-3.09-6.26L2 9l6.91-.74L12 2z"/>
+        </svg>
+      ),
+      description: "ABV-IIITM Gwalior - A premier technical institution with state-of-the-art facilities.",
+      items: [
+        "Morena Rd, IIITM Campus, Gwalior - 474015",
+        "Modern auditoriums and seminar rooms",
+        "High-speed Wi-Fi and AV equipment",
+        "Cafeteria and dining facilities"
+      ]
+    },
+    {
+      title: "Travel Options",
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      ),
+      description: "Multiple convenient transportation options to reach Gwalior from major cities.",
+      items: [
+        "By Air: Gwalior Airport (8 km from campus)",
+        "By Train: Gwalior Junction (15 km from campus)",
+        "By Road: NH-44 connects to Delhi, Agra",
+        "Local transport: Taxis, auto-rickshaws"
+      ]
+    }
+  ];
+
+  const accommodationOptions = [
+    { title: "On-Campus", description: "Guest house with limited rooms" },
+    { title: "Nearby Hotels", description: "Multiple hotels within 5-10 km" },
+    { title: "Budget Options", description: "Guest houses in city center" },
+    { title: "Conference Rates", description: "Special rates for attendees" }
+  ];
+
+  const gwaliorInfo = [
+    { title: "Heritage", description: "Rich cultural and historical significance" },
+    { title: "Attractions", description: "Famous Gwalior Fort and palaces" },
+    { title: "Arts", description: "Known for classical music traditions" },
+    { title: "Infrastructure", description: "Modern city with good connectivity" }
+  ];
+
   return (
-    <main className="w-full">
-      {/* Header Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Venue & Travel
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Complete information about the conference venue, travel options, and accommodation in Gwalior.
+          </p>
+        </div>
+
+        {/* Venue Highlights */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {venueHighlights.map((highlight, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 h-full"
+            >
+              {/* Highlight Icon and Title */}
+              <div className="flex items-center mb-6">
+                <div className="text-blue-600 mr-4">
+                  {highlight.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {highlight.title}
+                </h3>
+              </div>
+              
+              {/* Highlight Description */}
+              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+                {highlight.description}
+              </p>
+
+              {/* Highlight Items */}
+              <div className="space-y-3">
+                {highlight.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <p className="text-gray-600 text-base leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+
+
+        {/* Accommodation Options */}
+        <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Venue & Travel Information
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Accommodation Options
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Information about the conference venue, accommodation, and travel arrangements
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Various accommodation choices to suit different preferences and budgets.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {accommodationOptions.map((option, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">{index + 1}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-gray-900 font-semibold mb-1 text-sm">
+                      {option.title}
+                    </h4>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      {option.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* About Gwalior */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {gwaliorInfo.map((info, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 h-full"
+            >
+              <div className="flex items-center mb-4">
+                <div className="text-blue-600 mr-3">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {info.title}
+                </h3>
+              </div>
+              
+              <p className="text-gray-600 leading-relaxed">
+                {info.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+
+
+
+
+        {/* Conference Theme Highlight */}
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-8 mb-12 text-white">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-2">Welcome to Gwalior</h3>
+            <p className="text-xl italic mb-4">
+              "Historical city with modern facilities for IATMSI-2026"
+            </p>
+            <p className="text-white/90">
+              March is pleasant weather in Gwalior. Book accommodation in advance for the best experience.
             </p>
           </div>
         </div>
-      </section>
 
-      {/* Venue Information */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Venue Details */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Conference Venue
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">ABV-IIITM Gwalior</h4>
-                      <p className="text-gray-600">Morena Rd, IIITM Campus, Gwalior, Madhya Pradesh, India - 474015</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Conference Halls</h4>
-                      <p className="text-gray-600">State-of-the-art auditoriums and seminar rooms</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Technical Facilities</h4>
-                      <p className="text-gray-600">High-speed internet, audio-visual equipment, and presentation facilities</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Campus Facilities
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Wi-Fi connectivity throughout campus</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Cafeteria and dining facilities</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Medical facilities and first aid</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Security and parking facilities</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Travel Information */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Travel Information
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">By Air</h4>
-                      <p className="text-gray-600">Gwalior Airport (GWL) - 8 km from campus. Direct flights from Delhi, Mumbai, and other major cities.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">By Train</h4>
-                      <p className="text-gray-600">Gwalior Junction (GWL) - Well connected to major cities. 15 km from campus.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">By Road</h4>
-                      <p className="text-gray-600">NH-44 connects Gwalior to Delhi, Agra, and other major cities. Regular bus services available.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Local Transportation
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Airport shuttle service available</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Auto-rickshaws and taxis from railway station</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Local bus services to campus</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Ride-sharing apps available in the city</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Contact Information */}
+        <div className="bg-white rounded-xl shadow-lg p-6 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">
+            Travel Assistance
+          </h3>
+          <p className="text-gray-600 mb-4">
+            For travel and accommodation assistance, contact us.
+          </p>
+          <a
+            href="mailto:iatmsi@iiitm.ac.in"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold rounded-lg transition-all duration-300 text-sm"
+          >
+            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Contact Support
+          </a>
+          <p className="text-gray-500 text-xs mt-3">
+            iatmsi@iiitm.ac.in | +91-8962280784
+          </p>
         </div>
-      </section>
-
-      {/* Accommodation & Local Info */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Accommodation */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Accommodation Options
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">On-Campus Guest House</h4>
-                      <p className="text-gray-600">Limited rooms available. Contact conference organizers for booking.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Nearby Hotels</h4>
-                      <p className="text-gray-600">Multiple hotels within 5-10 km range. Special conference rates available.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Budget Options</h4>
-                      <p className="text-gray-600">Guest houses and budget hotels available in the city center.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Important Notes
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Book accommodation well in advance</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">March is pleasant weather in Gwalior</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Carry necessary documents for travel</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Local currency: Indian Rupees (INR)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Local Information */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  About Gwalior
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Historical city with rich cultural heritage</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Famous for Gwalior Fort and palaces</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Known for classical music and arts</span>
-                  </div>
-                  <div className="flex items-center p-3 bg-blue-50 rounded-lg">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">Modern city with good infrastructure</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Contact Information
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  For travel and accommodation assistance, please contact:
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <svg className="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    <span className="text-gray-700">iatmsi@iiitm.ac.in</span>
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span className="text-gray-700">+91-8962280784; +91-9202731889</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 
