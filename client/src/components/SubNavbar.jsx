@@ -13,7 +13,7 @@ function SubNavbar() {
     ],
     forAuthors: [
       { text: "Instructions for Camera Ready", path: "/camera-ready-instructions" },
-      { text: "Paper Submission", path: "/paper-submission" },
+      { text: "Paper Submission", path: "/camera-ready-instructions" },
       { text: "Oral Presenter's Guidelines", path: "/oral-presenter-guidelines" },
       { text: "Poster Presenter's Guidelines", path: "/poster-presenter-guidelines" }, 
       { text: "Conference Program", path: "/conference-program" },
