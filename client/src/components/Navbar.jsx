@@ -30,8 +30,8 @@ function Navbar() {
             <Link to="/register" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
               Register
             </Link>
-            <Link to="/contact-us" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
-              Contact Us
+            <Link to="/contact-support" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 text-base font-medium transition-colors rounded">
+              Contact Support
             </Link>
           </nav>
         </div>

@@ -27,7 +27,7 @@ import KeynoteTalks from './pages/KeynoteTalks';
 import Awards from './pages/Awards';
 import Footer from './components/Footer';
 import ApplyReviewer from './pages/ApplyReviewer.jsx';
-
+import SubmitPaper from './pages/SubmitPaper.jsx';
 
 function App() {
   return (
@@ -60,6 +60,7 @@ function App() {
           <Route path="/call-for-reviewers" element={<CallForReviewers />} />
           <Route path="/keynote-talks" element={<KeynoteTalks />} />
           <Route path="/awards" element={<Awards />} />
+          <Route path="/submit-paper" element={<SubmitPaper />} />
         </Routes>
         <Footer />
       </div>
