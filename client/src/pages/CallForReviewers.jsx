@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import SubNavbar from '../components/SubNavbar';
+//import SubNavbar from '../components/SubNavbar';
 import Footer from '../components/Footer';
 
 function CallForReviewers() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-      <SubNavbar />
+
 
       {/* keep in page cause the one in components is for homepage */}
       <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
@@ -71,7 +70,7 @@ function CallForReviewers() {
 
         <div className="text-center mb-16">
           <a
-            href="/sample-guidelines.pdf"
+            href="/call-for-reviewrs.txt"
             download
             className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 mr-4"
           >
