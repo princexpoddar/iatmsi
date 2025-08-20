@@ -30,32 +30,32 @@ function ConferenceTheme() {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-purple-900 to-red-900">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Theme Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Theme
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            Conference Theme
           </h2>
-          <p className="text-xl md:text-2xl text-white font-medium">
+          <p className="text-xl md:text-2xl text-gray-600 font-medium">
             Enabling the Change! Social Innovation for Sustainable Societies
           </p>
         </div>
 
         {/* Tracks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
           {tracks.map((track) => (
             <div
               key={track.id}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {/* Track Title */}
-              <h3 className="text-lg font-bold text-white mb-3 leading-tight">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
                 {track.title}
               </h3>
               
               {/* Track Description */}
-              <p className="text-white/90 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 {track.description}
               </p>
             </div>
@@ -63,12 +63,12 @@ function ConferenceTheme() {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-12 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="text-center">
+          <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Conference Tracks
             </h3>
-            <p className="text-white/90 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Explore cutting-edge research and innovations across five specialized tracks
             </p>
           </div>

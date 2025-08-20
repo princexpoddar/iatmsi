@@ -35,11 +35,11 @@ function ImageGallery() {
   };
 
   return (
-    <section className="py-8">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Conference Gallery
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ function ImageGallery() {
         {/* Image Slider */}
         <div className="relative max-w-4xl mx-auto">
           {/* Main Image Container */}
-          <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+          <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-gray-200">
             {galleryImages.map((image, index) => (
               <div
                 key={image.id}
@@ -104,10 +104,10 @@ function ImageGallery() {
               <button
                 key={image.id}
                 onClick={() => goToImage(index)}
-                className={`w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+                className={`w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 border-2 ${
                   index === currentImageIndex 
-                    ? 'ring-2 ring-blue-500 ring-offset-2' 
-                    : 'opacity-60 hover:opacity-100'
+                    ? 'ring-2 ring-purple-500 ring-offset-2 border-purple-500' 
+                    : 'border-gray-200 opacity-60 hover:opacity-100'
                 }`}
               >
                 <img
@@ -119,8 +119,6 @@ function ImageGallery() {
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   );

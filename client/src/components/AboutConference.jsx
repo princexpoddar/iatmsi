@@ -58,14 +58,14 @@ function AboutConference() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-900 to-red-900">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
             About the Conference
           </h2>
-          <p className="text-xl md:text-2xl text-white font-medium">
+          <p className="text-xl md:text-2xl text-gray-600 font-medium">
             The 4th IEEE International Conference on Interdisciplinary Approaches in Technology and Management for Social Innovation
           </p>
         </div>
@@ -73,14 +73,14 @@ function AboutConference() {
         {/* Conference Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {highlights.map((highlight, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                             <div className="text-white mb-4">
-                 {highlight.icon}
-               </div>
-              <h3 className="text-lg font-bold text-white mb-2">
+            <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+              <div className="text-purple-600 mb-4">
+                {highlight.icon}
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {highlight.title}
               </h3>
-              <p className="text-white/90 text-sm">
+              <p className="text-gray-600 text-sm">
                 {highlight.description}
               </p>
             </div>
@@ -91,46 +91,46 @@ function AboutConference() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           {/* Left Column - Conference Details */}
           <div className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Conference Overview
               </h3>
-              <p className="text-white/90 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 IATMSI-2026 is a globally recognized Scopus indexed event organized by the Department of Electrical and Electronics Engineering at ABV-IIITM Gwalior, India, in association with the IEEE Madhya Pradesh Section.
               </p>
-              <p className="text-white/90 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Serving as a prestigious platform, this flagship conference aims to disseminate cutting-edge advancements across diverse disciplines, including communication, IT-enabled management, industrial electronics, healthcare, energy systems, VLSI design, smart transportation, biomedical sciences, agriculture, AI, robotics, defense technologies, and related domains.
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Theme 2026
               </h3>
-                             <div className="bg-gradient-to-r from-white/20 to-white/30 text-white p-6 rounded-lg">
-                 <h4 className="text-xl font-bold mb-2">
-                   "Enabling the Change! Social Innovation for Sustainable Societies"
-                 </h4>
-                 <p className="text-white/90">
-                   Continuing the legacy of innovation and collaboration
-                 </p>
-               </div>
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 text-gray-900 p-6 rounded-lg border border-purple-200">
+                <h4 className="text-xl font-bold mb-2">
+                  "Enabling the Change! Social Innovation for Sustainable Societies"
+                </h4>
+                <p className="text-gray-600">
+                  Continuing the legacy of innovation and collaboration
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Right Column - Statistics */}
           <div className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 IATMSI-2025 Success Metrics
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-4 bg-white/10 rounded-lg">
-                                         <div className="text-2xl font-bold text-white">
-                       {stat.number}
-                     </div>
-                    <div className="text-sm text-white/90">
+                  <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-2xl font-bold text-purple-600">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-600">
                       {stat.label}
                     </div>
                   </div>
@@ -138,15 +138,15 @@ function AboutConference() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Thematic Tracks
               </h3>
               <div className="space-y-3">
                 {tracks.map((track, index) => (
-                  <div key={index} className="flex items-center p-3 bg-white/10 rounded-lg">
-                                         <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span className="text-white/90">{track}</span>
+                  <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    <span className="text-gray-700">{track}</span>
                   </div>
                 ))}
               </div>
@@ -156,26 +156,26 @@ function AboutConference() {
 
         {/* Location and Format */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+          <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
             <div className="flex items-center mb-4">
-              <svg className="w-8 h-8 text-white mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              <h3 className="text-xl font-bold text-white">Location</h3>
+              <h3 className="text-xl font-bold text-gray-900">Location</h3>
             </div>
-            <p className="text-white/90">
+            <p className="text-gray-600">
               <strong>Gwalior, India</strong> - A vibrant city known for its rich cultural heritage and historical significance. Hosted at ABV-IIITM Gwalior.
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+          <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
             <div className="flex items-center mb-4">
-              <svg className="w-8 h-8 text-white mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
-              <h3 className="text-xl font-bold text-white">Conference Format</h3>
+              <h3 className="text-xl font-bold text-gray-900">Conference Format</h3>
             </div>
-            <p className="text-white/90">
+            <p className="text-gray-600">
               <strong>Hybrid Mode</strong> - Offering a rich blend of in-person interactions and virtual accessibility. Features research paper presentations, poster sessions, industry exhibits, tutorials, and plenary talks.
             </p>
           </div>

@@ -28,11 +28,11 @@ function PatronChairs() {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-purple-900 to-red-900">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Patron & General Chairs
           </h2>
         </div>
@@ -42,7 +42,7 @@ function PatronChairs() {
           {chairs.map((chair) => (
             <div
               key={chair.id}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {/* Photo or Placeholder */}
               <div className="text-center mb-4">
@@ -53,8 +53,8 @@ function PatronChairs() {
                     </svg>
                   </div>
                 ) : (
-                  <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-white/20 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-white/60" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-100 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
                   </div>
@@ -63,13 +63,13 @@ function PatronChairs() {
               
               {/* Chair Info */}
               <div className="text-center">
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {chair.name}
                 </h3>
-                <p className="text-orange-400 font-semibold mb-2">
+                <p className="text-purple-600 font-semibold mb-2">
                   {chair.role}
                 </p>
-                <p className="text-white/90 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {chair.position}
                 </p>
               </div>
@@ -79,11 +79,11 @@ function PatronChairs() {
 
         {/* Additional Info */}
         <div className="text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Leadership Team
             </h3>
-            <p className="text-white/90 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Meet the distinguished leaders guiding IATMSI-2026 towards excellence
             </p>
           </div>
