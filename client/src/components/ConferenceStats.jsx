@@ -45,17 +45,27 @@ function ConferenceStats() {
   ];
 
   return (
-    <section className="py-8 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            Conference Highlights
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Key statistics and achievements that define IATMSI-2026
+          </p>
+        </div>
+
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {stats.map((stat) => (
             <div
               key={stat.id}
               className="bg-white rounded-xl p-6 border border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {/* Icon */}
-              <div className="text-blue-600 mb-4">
+              <div className="text-purple-600 mb-4">
                 {stat.icon}
               </div>
               
@@ -73,7 +83,7 @@ function ConferenceStats() {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-8 text-center">
+        <div className="text-center">
           <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               IEEE International Conference

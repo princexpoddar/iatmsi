@@ -55,11 +55,11 @@ function Supporters() {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Supporters Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Supporters
           </h2>
         </div>
@@ -89,7 +89,7 @@ function Supporters() {
                     {sponsor.details}
                   </p>
                 )}
-                <p className="text-orange-500 font-semibold text-sm">
+                <p className="text-purple-600 font-semibold text-sm">
                   {sponsor.type}
                 </p>
               </div>
@@ -132,7 +132,7 @@ function Supporters() {
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-orange-500 font-semibold text-sm">
+                  <span className="text-purple-600 font-semibold text-sm">
                     {partner.type}
                   </span>
                   <a 
