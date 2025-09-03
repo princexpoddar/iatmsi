@@ -1,8 +1,8 @@
 import React from 'react';
-import faqData from '../data/faqData.json';
-import PageHeader from '../components/common/PageHeader';
-import FAQAccordion from '../components/common/FAQAccordion';
-import ContactSection from '../components/common/ContactSection';
+import faqData from '../../data/faqData.json';
+import PageHeader from '../../components/common/PageHeader';
+import FAQAccordion from '../../components/common/FAQAccordion';
+import ContactSection from '../../components/common/ContactSection';
 
 function FAQ() {
   return (

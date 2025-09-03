@@ -1,9 +1,9 @@
 import React from 'react';
-import contactData from '../data/contactData.json';
-import PageHeader from '../components/common/PageHeader';
-import ContactCard from '../components/common/ContactCard';
-import SocialLink from '../components/common/SocialLink';
-import ContactForm from '../components/common/ContactForm';
+import contactData from '../../data/contactData.json';
+import PageHeader from '../../components/common/PageHeader';
+import ContactCard from '../../components/common/ContactCard';
+import SocialLink from '../../components/common/SocialLink';
+import ContactForm from '../../components/common/ContactForm';
 
 function ContactSupport() {
   return (

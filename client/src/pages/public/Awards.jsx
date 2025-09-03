@@ -1,9 +1,9 @@
 import React from 'react';
-import awardsData from '../data/awardsData.json';
-import PageHeader from '../components/common/PageHeader';
-import AwardCard from '../components/common/AwardCard';
-import CriteriaCard from '../components/common/CriteriaCard';
-import ContactSection from '../components/common/ContactSection';
+import awardsData from '../../data/awardsData.json';
+import PageHeader from '../../components/common/PageHeader';
+import AwardCard from '../../components/common/AwardCard';
+import CriteriaCard from '../../components/common/CriteriaCard';
+import ContactSection from '../../components/common/ContactSection';
 
 function Awards() {
   return (

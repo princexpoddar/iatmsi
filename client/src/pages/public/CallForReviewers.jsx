@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 //import SubNavbar from '../components/SubNavbar';
-import Footer from '../components/Footer';
+import Footer from '../../components/Footer';
 
 function CallForReviewers() {
   return (

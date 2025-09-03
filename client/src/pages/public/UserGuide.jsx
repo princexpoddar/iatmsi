@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import userGuideData from '../data/userGuideData.json';
-import { getIcon } from '../utils/icons';
-import PageHeader from '../components/common/PageHeader';
+import userGuideData from '../../data/userGuideData.json';
+import { getIcon } from '../../utils/icons';
+import PageHeader from '../../components/common/PageHeader';
 
 function UserGuide() {
   const [activeTab, setActiveTab] = useState('getting-started');
