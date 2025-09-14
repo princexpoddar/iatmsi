@@ -21,7 +21,6 @@ import Gallery from '../../pages/public/Gallery.jsx';
 import ContactSupport from '../../pages/public/ContactSupport.jsx';
 import UserGuide from '../../pages/public/UserGuide.jsx';
 import Register from '../../pages/public/Register.jsx';
-import ContactUs from '../../pages/public/ContactUs.jsx';
 import KeynoteTalks from '../../pages/public/KeynoteTalks.jsx';
 import Awards from '../../pages/public/Awards.jsx';
 // Admin pages
@@ -56,7 +55,6 @@ const RouteMapping = [
   { path: APP_ROUTES.PUBLIC.CONTACT_SUPPORT, element: <ContactSupport /> },
   { path: APP_ROUTES.PUBLIC.USER_GUIDE, element: <UserGuide /> },
   { path: APP_ROUTES.PUBLIC.REGISTER, element: <Register /> },
-  { path: APP_ROUTES.PUBLIC.CONTACT_US, element: <ContactUs /> },
   { path: APP_ROUTES.PUBLIC.KEYNOTE_TALKS, element: <KeynoteTalks /> },
   { path: APP_ROUTES.PUBLIC.AWARDS, element: <Awards /> },
 

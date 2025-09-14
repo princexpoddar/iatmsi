@@ -20,7 +20,6 @@ export default class APP_ROUTES {
     CONTACT_SUPPORT: '/contact-support',
     USER_GUIDE: '/user-guide',
     REGISTER: '/register',
-    CONTACT_US: '/contact-us',
     KEYNOTE_TALKS: '/keynote-talks',
     AWARDS: '/awards',
     NOT_FOUND: '*',
