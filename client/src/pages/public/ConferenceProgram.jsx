@@ -1,75 +1,175 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import LoadingPage from '../../components/LoadingPage/LoadingPage';
+
+const API_URL = 'http://localhost:8000/api/conference-program/public';
 
 function ConferenceProgram() {
-  const programHighlights = [
-    {
-      title: "Technical Sessions",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9l-6.91.74L12 16l-3.09-6.26L2 9l6.91-.74L12 2z"/>
-        </svg>
-      ),
-      description: "Multiple technical tracks covering diverse research domains and innovation areas.",
-      items: [
-        "Healthcare Technology & Social Innovation",
-        "Power, Control & Intelligent Transportation",
-        "AI, IoT & Computer Vision Technologies",
-        "Green Electronics & VLSI Communications"
-      ]
-    },
-    {
-      title: "Keynote Speakers & Events",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-        </svg>
-      ),
-      description: "Distinguished speakers from leading academic institutions and industry experts.",
-      items: [
-        "6 Keynote presentations",
-        "Panel discussions on social innovation",
-        "Interactive poster sessions",
-        "Award ceremonies & recognition"
-      ]
-    }
+  const [programData, setProgramData] = useState({
+    highlights: [],
+    stats: [],
+    schedule: [],
+    theme: null,
+    info: []
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Dynamic SVG icons for highlights
+  const icons = [
+    // Star
+    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2l3.09 6.26L22 9l-6.91.74L12 16l-3.09-6.26L2 9l6.91-.74L12 2z"/>
+    </svg>,
+    // Calendar
+    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 
+      2v14c0 1.1.9 2 2 2h14c1.1 0 
+      2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+      16H5V9h14v11z"/>
+    </svg>,
+    // Users
+    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M16 11c1.66 0 2.99-1.34 
+      2.99-3S17.66 5 16 5s-3 
+      1.34-3 3 1.34 3 3 3zm-8 
+      0c1.66 0 2.99-1.34 
+      2.99-3S9.66 5 8 5 5 6.34 5 
+      8s1.34 3 3 3zm0 2c-2.33 
+      0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 
+      0c-.29 0-.62.02-.97.05 
+      1.16.84 1.97 1.97 1.97 
+      3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    </svg>,
+    // Lightbulb
+    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M9 21h6v-1H9v1zm3-19C8.14 
+      2 5 5.14 5 9c0 3.53 2.61 
+      6.43 6 6.92V19h2v-3.08c3.39-.49 
+      6-3.39 6-6.92 0-3.86-3.14-7-7-7z"/>
+    </svg>,
+    // Book
+    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18 2H6c-1.1 0-2 .9-2 
+      2v16c0 1.1.9 2 2 2h12c1.1 
+      0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 
+      18H6V4h12v16z"/>
+    </svg>,
   ];
 
-  const conferenceStats = [
-    { title: "Days", count: "3", description: "Conference Days" },
-    { title: "Sessions", count: "12+", description: "Technical Sessions" },
-    { title: "Speakers", count: "6", description: "Keynote Speakers" },
-    { title: "Posters", count: "2", description: "Poster Sessions" }
-  ];
+  useEffect(() => {
+    const fetchProgramData = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(API_URL);
+        const items = res.data;
+        
+        // Group items by type
+        const grouped = {
+          highlights: items.filter(item => item.type === 'highlight'),
+          stats: items.filter(item => item.type === 'stats'),
+          schedule: items.filter(item => item.type === 'schedule'),
+          theme: items.find(item => item.type === 'theme') || null,
+          info: items.filter(item => item.type === 'info')
+        };
+        
+        setProgramData(grouped);
+      } catch (err) {
+        console.error('Failed to fetch program data:', err);
+        // Fallback to static data
+        setProgramData({
+          highlights: [
+            {
+              title: "Technical Sessions",
+              description: "Multiple technical tracks covering diverse research domains and innovation areas.",
+              data: {
+                items: [
+                  "Healthcare Technology & Social Innovation",
+                  "Power, Control & Intelligent Transportation",
+                  "AI, IoT & Computer Vision Technologies",
+                  "Green Electronics & VLSI Communications"
+                ]
+              }
+            },
+            {
+              title: "Keynote Speakers & Events",
+              description: "Distinguished speakers from leading academic institutions and industry experts.",
+              data: {
+                items: [
+                  "6 Keynote presentations",
+                  "Panel discussions on social innovation",
+                  "Interactive poster sessions",
+                  "Award ceremonies & recognition"
+                ]
+              }
+            }
+          ],
+          stats: [
+            { data: { count: "3", description: "Conference Days" } },
+            { data: { count: "12+", description: "Technical Sessions" } },
+            { data: { count: "6", description: "Keynote Speakers" } },
+            { data: { count: "2", description: "Poster Sessions" } }
+          ],
+          schedule: [
+            {
+              data: {
+                day: "Day 1 - March 12, 2026",
+                highlights: [
+                  "Registration & Welcome",
+                  "Opening Ceremony",
+                  "Keynote: Social Innovation in Technology",
+                  "Technical Sessions & Poster Session"
+                ]
+              }
+            },
+            {
+              data: {
+                day: "Day 2 - March 13, 2026",
+                highlights: [
+                  "Keynote: Sustainable Technology Solutions",
+                  "Technical Sessions",
+                  "Panel Discussion: Future of Social Innovation",
+                  "Interactive Poster Session"
+                ]
+              }
+            },
+            {
+              data: {
+                day: "Day 3 - March 14, 2026",
+                highlights: [
+                  "Keynote: Emerging Technologies for Social Impact",
+                  "Technical Sessions",
+                  "Award Ceremony",
+                  "Closing Ceremony"
+                ]
+              }
+            }
+          ],
+          theme: {
+            data: {
+              quote: "Enabling the Change! Social Innovation for Sustainable Societies",
+              details: "March 12-14, 2026 | Hybrid Event | ABV-IIITM Gwalior, India"
+            }
+          },
+          info: [
+            {
+              data: {
+                items: [
+                  "All times in IST | Hybrid event with in-person and virtual options",
+                  "Technical sessions include Q&A | Interactive poster presentations",
+                  "Conference proceedings available online | IEEE Xplore submission"
+                ]
+              }
+            }
+          ]
+        });
+      }
+      setLoading(false);
+    };
+    fetchProgramData();
+  }, []);
 
-  const conferenceSchedule = [
-    {
-      day: "Day 1 - March 12, 2026",
-      highlights: [
-        "Registration & Welcome",
-        "Opening Ceremony",
-        "Keynote: Social Innovation in Technology",
-        "Technical Sessions & Poster Session"
-      ]
-    },
-    {
-      day: "Day 2 - March 13, 2026",
-      highlights: [
-        "Keynote: Sustainable Technology Solutions",
-        "Technical Sessions",
-        "Panel Discussion: Future of Social Innovation",
-        "Interactive Poster Session"
-      ]
-    },
-    {
-      day: "Day 3 - March 14, 2026",
-      highlights: [
-        "Keynote: Emerging Technologies for Social Impact",
-        "Technical Sessions",
-        "Award Ceremony",
-        "Closing Ceremony"
-      ]
-    }
-  ];
+  if (loading) return <LoadingPage />;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -86,20 +186,20 @@ function ConferenceProgram() {
 
         {/* Conference Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {conferenceStats.map((stat, index) => (
+          {programData.stats.map((stat, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 text-center"
             >
-              <div className="text-3xl font-bold text-blue-600 mb-2">{stat.count}</div>
-              <div className="text-gray-600">{stat.description}</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">{stat.data.count}</div>
+              <div className="text-gray-600">{stat.data.description}</div>
             </div>
           ))}
         </div>
 
         {/* Program Highlights */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {programHighlights.map((highlight, index) => (
+          {programData.highlights.map((highlight, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 h-full"
@@ -107,7 +207,7 @@ function ConferenceProgram() {
               {/* Highlight Icon and Title */}
               <div className="flex items-center mb-6">
                 <div className="text-blue-600 mr-4">
-                  {highlight.icon}
+                  {icons[index % icons.length]}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
                   {highlight.title}
@@ -119,16 +219,11 @@ function ConferenceProgram() {
                 {highlight.description}
               </p>
 
-              {/* Highlight Items */}
-              <div className="space-y-3">
-                {highlight.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                    <p className="text-gray-600 text-base leading-relaxed">
-                      {item}
-                    </p>
-                  </div>
-                ))}
+              {/* Highlight Content - No items field anymore */}
+              <div className="text-center py-4">
+                <p className="text-gray-500 italic">
+                  {highlight.data.description || 'Highlight details will be displayed here.'}
+                </p>
               </div>
             </div>
           ))}
@@ -146,18 +241,18 @@ function ConferenceProgram() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {conferenceSchedule.map((schedule, index) => (
+            {programData.schedule.map((schedule, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors duration-300"
+                className="bg-gray-100 rounded-lg p-6 hover:bg-gray-200 transition-colors duration-300"
               >
                 <h4 className="text-lg font-bold text-gray-900 mb-4">
-                  {schedule.day}
+                  {schedule.data.day}
                 </h4>
                 <div className="space-y-2">
-                  {schedule.highlights.map((highlight, highlightIndex) => (
-                    <div key={highlightIndex} className="flex items-start space-x-2">
-                      <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
+                  {schedule.data.highlights?.map((highlight, highlightIndex) => (
+                    <div key={highlightIndex} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         {highlight}
                       </p>
@@ -169,23 +264,20 @@ function ConferenceProgram() {
           </div>
         </div>
 
-
-
-
-
-
         {/* Conference Theme Highlight */}
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-8 mb-12 text-white">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-2">Conference Theme 2026</h3>
-            <p className="text-xl italic mb-4">
-              "Enabling the Change! Social Innovation for Sustainable Societies"
-            </p>
-            <p className="text-white/90">
-              March 12-14, 2026 | Hybrid Event | ABV-IIITM Gwalior, India
-            </p>
+        {programData.theme && (
+          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-8 mb-12 text-white">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-2">Conference Theme 2026</h3>
+              <p className="text-xl italic mb-4">
+                "{programData.theme.data.quote}"
+              </p>
+              <p className="text-white/90">
+                {programData.theme.data.details}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Important Information */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
@@ -199,30 +291,27 @@ function ConferenceProgram() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
-              <h4 className="text-gray-900 font-semibold mb-2 text-base">
-                Timing & Format
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                All times in IST | Hybrid event with in-person and virtual options
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
-              <h4 className="text-gray-900 font-semibold mb-2 text-base">
-                Sessions
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Technical sessions include Q&A | Interactive poster presentations
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
-              <h4 className="text-gray-900 font-semibold mb-2 text-base">
-                Proceedings
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Conference proceedings available online | IEEE Xplore submission
-              </p>
-            </div>
+            {programData.info.length > 0 ? (
+              programData.info.map((info, index) => (
+                <div 
+                  key={index} 
+                  className="bg-gray-100 rounded-lg p-6 hover:bg-gray-200 transition-colors duration-300"
+                >
+                  <h4 className="text-gray-900 font-semibold mb-3 text-lg">
+                    {info.title || `Information ${index + 1}`}
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {info.description || 'No description available.'}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-500 italic">
+                  Important information will be displayed here.
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -252,4 +341,4 @@ function ConferenceProgram() {
   );
 }
 
-export default ConferenceProgram; 
+export default ConferenceProgram;

@@ -1,56 +1,89 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import LoadingPage from '../../components/LoadingPage/LoadingPage';
+
+const API_URL = 'http://localhost:8000/api/important-dates/public';
 
 function ImportantDates() {
-  const importantDates = [
-    {
-      event: "Call for Papers",
-      date: "10th July 2025",
-      category: "submission"
-    },
-    {
-      event: "1st Round of Full Paper Submission Due Date",
-      date: "September 20, 2025",
-      category: "submission"
-    },
-    {
-      event: "1st Review Round Notification (Accept, Revise, Reject)",
-      date: "October 20, 2025",
-      category: "review"
-    },
-    {
-      event: "2nd Round of Full Paper Submission Due Date",
-      date: "20th November 2025",
-      category: "submission"
-    },
-    {
-      event: "2nd Review Round Notification Deadline (Accept or Reject)",
-      date: "30th Nov. 2025",
-      category: "review"
-    },
-    {
-      event: "Camera-ready Paper Due",
-      date: "31st Dec. 2025",
-      category: "final"
-    },
-    {
-      event: "Registration Open",
-      date: "15th Oct. 2025",
-      category: "registration"
-    },
-    {
-      event: "Early-Bird Registration Closes",
-      date: "31st Dec. 2025",
-      category: "registration"
-    },
-    {
-      event: "Last Date of Registration",
-      date: "1st Feb. 2026",
-      category: "registration"
-    }
-  ];
+  const [importantDates, setImportantDates] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchImportantDates = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(API_URL);
+        setImportantDates(res.data);
+      } catch (err) {
+        console.error('Failed to fetch important dates:', err);
+        // Fallback to static data if API fails
+        setImportantDates([
+          {
+            title: "Call for Papers",
+            date: "2025-07-10",
+            category: "Submission",
+            description: "Call for Papers opens"
+          },
+          {
+            title: "1st Round of Full Paper Submission Due Date",
+            date: "2025-09-20",
+            category: "Submission",
+            description: "First round paper submission deadline"
+          },
+          {
+            title: "1st Review Round Notification (Accept, Revise, Reject)",
+            date: "2025-10-20",
+            category: "Review",
+            description: "First review round notifications"
+          },
+          {
+            title: "2nd Round of Full Paper Submission Due Date",
+            date: "2025-11-20",
+            category: "Submission",
+            description: "Second round paper submission deadline"
+          },
+          {
+            title: "2nd Review Round Notification Deadline (Accept or Reject)",
+            date: "2025-11-30",
+            category: "Review",
+            description: "Final review notifications"
+          },
+          {
+            title: "Camera-ready Paper Due",
+            date: "2025-12-31",
+            category: "Final",
+            description: "Camera-ready paper submission"
+          },
+          {
+            title: "Registration Open",
+            date: "2025-10-15",
+            category: "Registration",
+            description: "Conference registration opens"
+          },
+          {
+            title: "Early-Bird Registration Closes",
+            date: "2025-12-31",
+            category: "Registration",
+            description: "Early-bird registration deadline"
+          },
+          {
+            title: "Last Date of Registration",
+            date: "2026-02-01",
+            category: "Registration",
+            description: "Final registration deadline"
+          }
+        ]);
+      }
+      setLoading(false);
+    };
+    fetchImportantDates();
+  }, []);
+
+  if (loading) return <LoadingPage />;
 
   const getCategoryColor = (category) => {
-    switch (category) {
+    switch (category?.toLowerCase()) {
       case 'submission':
         return 'bg-purple-100 text-purple-800 border-purple-200';
       case 'review':
@@ -62,6 +95,15 @@ function ImportantDates() {
       default:
         return 'bg-gray-100 text-gray-800 border-gray-200';
     }
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   return (
@@ -103,21 +145,24 @@ function ImportantDates() {
                   {/* Category Badge */}
                   <div className="col-span-1 flex justify-center">
                     <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getCategoryColor(item.category)}`}>
-                      {item.category.charAt(0).toUpperCase()}
+                      {item.category?.charAt(0).toUpperCase() || 'O'}
                     </span>
                   </div>
                   
                   {/* Event Description */}
                   <div className="col-span-8">
-                    <h3 className="font-medium text-gray-900 leading-tight">
-                      {item.event}
+                    <h3 className={`font-medium text-gray-900 leading-tight ${item.isStrikethrough ? 'line-through text-red-500' : ''}`}>
+                      {item.title || item.event}
                     </h3>
+                    {item.description && (
+                      <p className="text-sm text-gray-600 mt-1">{item.description}</p>
+                    )}
                   </div>
                   
                   {/* Date */}
                   <div className="col-span-3 text-center">
-                    <div className="text-purple-600 font-bold text-lg">
-                      {item.date}
+                    <div className={`text-purple-600 font-bold text-lg ${item.isStrikethrough ? 'line-through text-red-500' : ''}`}>
+                      {formatDate(item.date)}
                     </div>
                   </div>
                 </div>
