@@ -211,7 +211,7 @@ function TrackChairs() {
                 View Call for Papers
               </a>
               <a 
-                href="/submit-paper"
+                href="/paper-submission"
                 className="inline-block px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300"
               >
                 Submit Paper

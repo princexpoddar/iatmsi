@@ -33,7 +33,7 @@ function CallForPapers() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="/submit-paper"
+              href="/paper-submission"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 hover:-translate-y-0.5 transition-all"
             >
               Submit Your Paper
