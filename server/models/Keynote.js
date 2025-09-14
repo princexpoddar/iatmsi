@@ -6,6 +6,7 @@ const KeynoteSchema = new mongoose.Schema({
   biography: { type: String, required: true },
   title: { type: String, required: true },
   abstract: { type: String, required: true },
+  imageUrl: { type: String, default: '' },
   createdAt: { type: Date, default: Date.now }
 });
 

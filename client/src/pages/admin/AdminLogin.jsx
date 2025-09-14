@@ -24,7 +24,7 @@ const AdminLogin = () => {
     setLoading(false);
 
     if (success) {
-      navigate('/'); // redirect after login
+      navigate('/admin/dashboard'); // redirect to admin dashboard after login
     } else {
       setError('Login failed. Please check your credentials.');
     }

@@ -9,16 +9,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow non-browser requests like Postman
-
-      const whitelist = process.env.WHITELISTED_URL?.split(','); // allow multiple URLs
-      if (whitelist && whitelist.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+    origin: true, // Allow all origins for development
     credentials: true,
     allowedHeaders: [
       'Content-Type',
@@ -39,5 +30,9 @@ app.use(express.json());
 const PORT = process.env.PORT;
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/keynotes', require('./routes/keynote'));
+app.use('/api/authors', require('./routes/author'));
+app.use('/api/important-dates', require('./routes/importantDate'));
+app.use('/api/conference-program', require('./routes/conferenceProgram'));
+app.use('/api/pdfs', require('./routes/pdf'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

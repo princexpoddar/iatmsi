@@ -26,8 +26,11 @@ import KeynoteTalks from '../../pages/public/KeynoteTalks.jsx';
 import Awards from '../../pages/public/Awards.jsx';
 // Admin pages
 import AdminLogin from '../../pages/admin/AdminLogin.jsx';
+import AdminDashboard from '../../pages/admin/AdminDashboard.jsx';
 import AdminKeynoteTalks from '../../pages/admin/KeynoteTalks.jsx';
-// import AdminDashboard from '../pages/admin/AdminDashboard.jsx';
+import AdminConferenceProgram from '../../pages/admin/ConferenceProgram.jsx';
+import AdminImportantDates from '../../pages/admin/ImportantDates.jsx';
+import PdfManagement from '../../pages/admin/PdfManagement.jsx';
 // import EditContent from '../pages/admin/EditContent.jsx';
 // import SubmitPaper from '../pages/admin/SubmitPaper.jsx';
 // import ApplyReviewer from '../pages/admin/ApplyReviewer.jsx';
@@ -59,8 +62,11 @@ const RouteMapping = [
 
   // Admin routes (protected)
   { path: APP_ROUTES.ADMIN.LOGIN, element: <AdminLogin /> },
+  { path: APP_ROUTES.ADMIN.DASHBOARD, element: <AuthRoute><AdminDashboard /></AuthRoute> },
   { path: APP_ROUTES.ADMIN.KEYNOTE_TALKS, element: <AuthRoute><AdminKeynoteTalks /></AuthRoute> },
-  // { path: APP_ROUTES.ADMIN.DASHBOARD, element: <AuthRoute><AdminDashboard /></AuthRoute> },
+  { path: APP_ROUTES.ADMIN.CONFERENCE_PROGRAM, element: <AuthRoute><AdminConferenceProgram /></AuthRoute> },
+  { path: APP_ROUTES.ADMIN.IMPORTANT_DATES, element: <AuthRoute><AdminImportantDates /></AuthRoute> },
+  { path: APP_ROUTES.ADMIN.PDF_MANAGEMENT, element: <AuthRoute><PdfManagement /></AuthRoute> },
   // { path: APP_ROUTES.ADMIN.EDIT_CONTENT, element: <AuthRoute><EditContent /></AuthRoute> },
   // { path: APP_ROUTES.ADMIN.SUBMIT_PAPER, element: <AuthRoute><SubmitPaper /></AuthRoute> },
   // { path: APP_ROUTES.ADMIN.APPLY_REVIEWER, element: <AuthRoute><ApplyReviewer /></AuthRoute> },
