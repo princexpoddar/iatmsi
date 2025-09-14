@@ -23,6 +23,7 @@ import UserGuide from '../../pages/public/UserGuide.jsx';
 import Register from '../../pages/public/Register.jsx';
 import KeynoteTalks from '../../pages/public/KeynoteTalks.jsx';
 import Awards from '../../pages/public/Awards.jsx';
+import CallForReviewers from '../../pages/public/CallForReviewers.jsx';
 // Admin pages
 import AdminLogin from '../../pages/admin/AdminLogin.jsx';
 import AdminDashboard from '../../pages/admin/AdminDashboard.jsx';
@@ -39,6 +40,7 @@ const RouteMapping = [
   { path: APP_ROUTES.PUBLIC.HOME, element: <Homepage /> },
   { path: APP_ROUTES.PUBLIC.ABOUT, element: <AboutIATMSI /> },
   { path: APP_ROUTES.PUBLIC.CALL_FOR_PAPERS, element: <CallForPapers /> },
+  { path: APP_ROUTES.PUBLIC.CALL_FOR_REVIEWERS, element: <CallForReviewers /> },
   { path: APP_ROUTES.PUBLIC.PAPER_SUBMISSION, element: <PaperSubmission /> },
   { path: APP_ROUTES.PUBLIC.IMPORTANT_DATES, element: <ImportantDates /> },
   { path: APP_ROUTES.PUBLIC.SPONSORSHIP, element: <Sponsorship /> },

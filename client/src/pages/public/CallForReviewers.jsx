@@ -77,7 +77,7 @@ function CallForReviewers() {
             Download Guidelines
           </a>
           <a
-            href="/apply-reviewer"
+            href="https://forms.gle/TS5v1mjHCzvmb4rf8"
             className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 mr-4"
           >
             Apply as Reviewer

@@ -4,6 +4,7 @@ export default class APP_ROUTES {
     HOME: '/',
     ABOUT: '/about',
     CALL_FOR_PAPERS: '/call-for-papers',
+    CALL_FOR_REVIEWERS: '/call-for-reviewers',
     PAPER_SUBMISSION: '/paper-submission',
     IMPORTANT_DATES: '/important-dates',
     SPONSORSHIP: '/sponsorship',
