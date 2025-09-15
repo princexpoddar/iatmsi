@@ -38,6 +38,14 @@ function CallForPapers() {
             >
               Submit Your Paper
             </a>
+            <a
+              href={(pdfs && pdfs[0] && pdfs[0].url) ? pdfs[0].url : 'https://iatmsi.iiitm.ac.in/wp-content/uploads/2024/11/IATMSI-2026.pdf'}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:-translate-y-0.5 transition-all"
+            >
+              Download CFP (PDF)
+            </a>
           </div>
         </div>
       </section>

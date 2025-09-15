@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SubNavbar from './components/SubNavbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
 
 import appRoutes from './constants/appRoutes.constants';
 import RouteMapping from './components/RouteMapping/RouteMapping';
@@ -12,6 +13,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
+        <ScrollToTop />
         <Navbar />
         <SubNavbar />
         <Routes>

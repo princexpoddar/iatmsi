@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import APP_ROUTES from '../../constants/appRoutes.constants.jsx';
 
 function IATMSIHistory() {
   const tracks = [
@@ -294,18 +296,18 @@ function IATMSIHistory() {
               Be part of the next chapter in IATMSI's journey of technological innovation and social impact
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/call-for-papers"
+              <Link 
+                to={APP_ROUTES.PUBLIC.CALL_FOR_PAPERS}
                 className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Submit Your Paper
-              </a>
-              <a 
-                href="/register"
+              </Link>
+              <Link 
+                to={APP_ROUTES.PUBLIC.REGISTER}
                 className="inline-block px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300"
               >
                 Register Now
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import APP_ROUTES from '../constants/appRoutes.constants.jsx';
 
 function CallForPapers() {
   return (
@@ -30,12 +32,17 @@ function CallForPapers() {
               <p className="text-gray-700 mb-6">
                 Get detailed information about paper submission guidelines, important dates, and conference tracks.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center">
+              <a
+                href="https://iatmsi.iiitm.ac.in/wp-content/uploads/2024/11/IATMSI-2026.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center"
+              >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-7-7 7-7"/>
                 </svg>
                 Download PDF
-              </button>
+              </a>
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
@@ -107,18 +114,18 @@ function CallForPapers() {
         {/* Call to Action Buttons */}
         <div className="mt-12 text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center">
+            <Link to={APP_ROUTES.PUBLIC.PAPER_SUBMISSION} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 inline-flex items-center justify-center">
               <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-7-7 7-7"/>
               </svg>
               Submit Paper Now
-            </button>
-            <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center">
+            </Link>
+            <Link to={APP_ROUTES.PUBLIC.REGISTER} className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 inline-flex items-center justify-center">
               <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01 1l-4.7 6.3c-.37.5-.58 1.1-.58 1.7V20c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2z"/>
               </svg>
               Register for Conference
-            </button>
+            </Link>
           </div>
         </div>
       </div>
